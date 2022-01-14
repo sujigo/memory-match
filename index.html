@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Memory & Match</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/52e276fb65.js" crossorigin="anonymous"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <section id="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="header--title">Memory & Match!</h2>
+                        <p>Who finds 5 pairs first wins. Good luck!</p>
+                    </div>
+                    <!-- <div class="col-md-3">
+                        <button type="button" class="btn btn-secondary btn-sm btn--instruction"><i class="fas fa-pencil-alt"></i> Instruction</button>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="game">
+            <div class="row">
+                <!-- Player 1 section -->
+                <div class="col-6 col-lg-3 order-lg-1 player-border">
+                    <div class="player player--0 player--active">
+                        <h4>PLAYER 1</h4>
+                        <p>Score</p>
+                        <p class="scores" id="score--0">0</p>
+                    </div>                   
+                </div>
+                <!-- Player 2 section -->
+                <div class="col-6 col-lg-3 order-lg-3 player-border">
+                    <div class="player player--1">
+                        <h4>PLAYER 2</h4>
+                        <p>Score</p>
+                        <p class="scores" id="score--1">0</p>
+                    </div>   
+                </div>
+                <!-- 20 Cards section -->
+                <div class="col-12 col-lg-6 order-lg-2">
+                    <div class="row justify-content-center">
+                        <img id = "card1" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card2" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card3" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card4" class="card-frame" src = "images/cardback.jpeg" />
+                    </div>
+                    <div class="row justify-content-center">
+                        <img id = "card5" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card6" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card7" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card8" class="card-frame" src = "images/cardback.jpeg" />
+                    </div>
+                    <div class="row justify-content-center">
+                        <img id = "card9" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card10" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card11" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card12" class="card-frame" src = "images/cardback.jpeg" />
+                    </div>
+                    <div class="row justify-content-center">
+                        <img id = "card13" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card14" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card15" class="card-frame" src = "images/cardback.jpeg" />
+                        <img id = "card16" class="card-frame" src = "images/cardback.jpeg" />
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Instruction button on the upper right -->
+        <button class="btn--instruction"><i class="fas fa-pencil-alt"></i> Instruction</button>
+
+        <!-- Message popup when a player matched 6 pairs or tie -->
+        <div class="end-game-message hidden">
+            <p class="palyer--win">Player1 won!!</p>
+            <p>Do you want another round?</p>
+            <button class="btn--new">New Game</button>
+        </div>
+
+        <!-- Instruction popup when the instrudtion button clicked -->
+        <div class="instruction hidden">
+            <p class="instruction--title">INSTRUCTION</p>
+            <ol class="instruction-list">
+                <li>The objective is to collect 6 pairs of cards faster than your partner.</li>
+                <li>There are the shuffled 20 cards laid down on the table, face down, in rows.</li>
+                <li>Player 1 goes first. </li>
+                <li>On each turn, a player turns over any two cards (one at a time) and get 1 score if the cards match (for instance, two same dog pictures)</li>
+                <li>If they successfully match a pair they get 1 score and the pair remains face up, and that player gets another turn.</li>
+                <li>When a player turns over two cards that do not match, those cards are turned face down again (in the same position) and it becomes the next player’s turn.</li>
+                <li>The trick is to remember which cards are where.</li>
+                <li>The person with 6 pairs first wins.</li>
+            </ol>
+            <button class="btn---closeInstruction">Got it!</button>
+        </div>
+        <!-- blurred background-->
+        <div class="overlay hidden"></div> 
+
+        <script src="script.js"></script>
+
+    </body>
+    <footer>Copyright © 2021 Suji Ahn 🍦</footer>
+</html>

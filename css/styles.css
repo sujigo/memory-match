@@ -1,0 +1,207 @@
+body {
+    text-align: center;
+    background-color: #fff4eb;
+    font-family: Monaco;
+}
+
+.header--title {
+    font-family: Chalkduster;
+    margin-bottom: 10px;
+}
+
+/* Player Score board */
+.player-border {
+    /* background-color: #8ac598; */
+    background-color: #8ac598;;
+    border-radius: 3%;
+    margin-bottom: 0.5%;
+}
+
+.player--0 {
+    background-color: rgba(255, 255, 255, 0.35);
+    margin: 4% 0 3% 13%;
+    padding: 6% 0 1% 0;
+    border-radius: 3%;
+}
+
+.player--1 {
+    background-color: rgba(255, 255, 255, 0.35);
+    margin: 4% 13% 3% 0;
+    padding: 6% 0 1% 0;
+    border-radius: 3%;
+}
+
+.player--active {
+    background-color: #ffb6b6;
+    border: 1px solid #ff4141;
+    border-width: 5px;    
+}
+
+.scores {
+    font-size: 200%;
+}
+
+
+/* Card deck */
+.card-deck {
+    background-color: blueviolet;
+    /* margin: auto; */
+}
+
+.card-frame {
+    width: 22%;
+    height: 145px;
+    margin: 0.3% 0.3%;
+    cursor: pointer; /*change the cursore to pointor on the cards*/
+    border-radius: 8px;
+    border: 2px solid #8ac598;
+    /* border-style: groove; */
+}
+
+.card-frame:hover {
+    border: 1px solid #c1face;
+}
+
+
+/* End Game Masege  */
+.end-game-message, .end-game-message-tie {
+    width: 60%;
+    height: 40%;
+    font-size: 120%;
+    color: rgb(255, 255, 255);
+    /* font-family: Comic Sans MS, Comic Sans, cursive; */
+    /* line-height: 45px; */
+    text-align: center;
+    position: absolute;
+    background-color: #003477;
+    border-radius: 5px;
+    bottom: 40%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    /* transform: translateX(-50%); */
+    border: 10px solid #8ad4ff;
+    z-index: 1000;
+}
+
+.palyer--win {
+    padding: 35px 0 25px 0;
+    font-size: 150%;
+}
+
+.btn--new {
+    background-color: #d8d6d6; /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    color: #000000;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.btn--new:hover {
+    background-color: #ffffff;
+    font-weight: bolder;
+}
+
+
+/* Instruction */
+.btn--instruction{
+    position:absolute;
+    top: 3%;
+    right: 3%;
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn--instruction:hover {
+    background-color: #e9e9e9;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 700px) {
+    .btn--instruction {
+        display: none;
+    }
+}
+
+.instruction {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 10%;
+    left: 50%;
+    background-color: whitesmoke;
+    width: 50%;
+    height: auto;
+    font-size: 15px;
+    color: black;
+    /* font-family: Arial, sans-serif; */
+    line-height: 2;
+    border-radius: 8px;
+    opacity: 0.9;
+    z-index: 1000;
+}
+
+.instruction--title {
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+.instruction-list {
+    padding: 0 10%;
+    text-align: left;
+}
+
+.btn---closeInstruction {
+    background-color: #5e9ff5;
+    border: none;
+    color: rgb(5, 6, 83);
+    padding: 0 2%;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+
+.btn---closeInstruction:hover {
+    background-color: #3d7ac9;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    transition: all 0.5s;
+}
+
+.hidden {
+    display: none;
+    margin-top: 10%;
+}
+
+footer {
+    text-align: right;
+    font-size: x-small;
+    color: rgb(71, 71, 71);
+    padding-top: 3px;
+}
