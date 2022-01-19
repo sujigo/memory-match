@@ -17,6 +17,8 @@ const cardImage14 = document.getElementById('card14');
 const cardImage15 = document.getElementById('card15');
 const cardImage16 = document.getElementById('card16');
 
+const player0Name = document.querySelector('#player--0--name');
+const player1Name = document.querySelector('#player--1--name');
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const score0El = document.querySelector('#score--0');
@@ -30,13 +32,30 @@ const btnInstruction = document.querySelector('.btn--instruction');
 const btnCloseInstruction = document.querySelector('.btn---closeInstruction')
 const overlay = document.querySelector('.overlay');
 
-const cardBackPath = "file:///Users/sujiahn/Desktop/projects/1_match-cards/images/cardback.jpeg";
+const cardBackPath = "resources/images/cardback.jpeg";
 
-// generate 16 image path in array
+/// User Name
+const player0 = window.prompt("Enter the FIRST PLAYER's name: ", "Player 1");
+const player1 = window.prompt("Enter the SECOND PLAYER's name: ", "Player 2");
+
+player0Name.innerHTML = player0;
+player1Name.innerHTML = player1;
+
+if (!player0 && !player1) {
+    player0Name.innerHTML = "Player 1";
+    player1Name.innerHTML = "Player 2";
+} else if (!player0) {
+    player0Name.innerHTML = "Player 1";
+} else if (!player1) {
+    player1Name.innerHTML = "Player 2";
+};
+
+
+/// generate 16 image path in array
 let cardSet = []
 for (let i=1;i<9;i++) {
-    cardSet.push(`images/img${i}.jpeg`)
-    cardSet.push(`images/img${i}.jpeg`)
+    cardSet.push(`resources/images/img${i}.jpeg`)
+    cardSet.push(`resources/images/img${i}.jpeg`)
 }
 
 // suffle 16 cards in array
@@ -50,7 +69,7 @@ let playing = true;
 let cardBackToBack = true;
 
 const isClicked = (card) => {
-    if (card.src === cardBackPath) {
+    if (card.getAttribute("src") === cardBackPath) {
         return false;
     } else {
         return true;
@@ -73,7 +92,12 @@ const win = (activePlayer) => {
         if (activePlayer === 'tie') {
             playerWinEl.textContent = "It's a tie !!"
         } else {
-            playerWinEl.textContent = `Player ${activePlayer + 1} won !!`
+            if(activePlayer === 0){
+                playerWinEl.textContent = `${player0} won !!`
+            } else{
+                playerWinEl.textContent = `${player1} won !!`
+            }
+            
         }
         endGameMessageEl.classList.remove('hidden')
         overlay.classList.remove('hidden')
@@ -111,6 +135,7 @@ const switchPlayer = function () {
   };
 
 cardImage1.onclick = () => {
+    console.log(cardImage1.getAttribute("src"));
     if (cardBackToBack && playing && !isClicked(cardImage1)){
         cardImage1.src = `${shuffledSet[0]}`;
         clickCard(cardImage1);
